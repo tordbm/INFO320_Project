@@ -1,0 +1,325 @@
+@prefix : <file:/Users/TordBM/Documents/INFOVIT-1/INFO320/INFO320_Project/onotology.ttl#ontology#> .
+@prefix ex: <http://example.org/ontology#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <file:/Users/TordBM/Documents/INFOVIT-1/INFO320/INFO320_Project/onotology.ttl#ontology#> .
+
+<file:/Users/TordBM/Documents/INFOVIT-1/INFO320/INFO320_Project/onotology.ttl#ontology> rdf:type owl:Ontology ;
+                                                                                         owl:imports owl: .
+
+#################################################################
+#    Datatypes
+#################################################################
+
+###  http://www.w3.org/2001/XMLSchema#date
+xsd:date rdf:type rdfs:Datatype .
+
+
+###  http://www.w3.org/2001/XMLSchema#time
+xsd:time rdf:type rdfs:Datatype .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://example.org/ontology#Date_ID
+ex:Date_ID rdf:type owl:DatatypeProperty ;
+           rdfs:domain ex:Date ;
+           rdfs:range xsd:integer .
+
+
+###  http://example.org/ontology#Month_ID
+ex:Month_ID rdf:type owl:DatatypeProperty ;
+            rdfs:domain ex:Date ;
+            rdfs:range xsd:integer .
+
+
+###  http://example.org/ontology#Month_Name
+ex:Month_Name rdf:type owl:DatatypeProperty ;
+              rdfs:domain ex:Date ;
+              rdfs:range xsd:string .
+
+
+###  http://example.org/ontology#Quarter_ID
+ex:Quarter_ID rdf:type owl:DatatypeProperty ;
+              rdfs:domain ex:Date ;
+              rdfs:range xsd:integer .
+
+
+###  http://example.org/ontology#Quarter_Name
+ex:Quarter_Name rdf:type owl:DatatypeProperty ;
+                rdfs:domain ex:Date ;
+                rdfs:range xsd:string .
+
+
+###  http://example.org/ontology#Week_Desc
+ex:Week_Desc rdf:type owl:DatatypeProperty ;
+             rdfs:domain ex:Date ;
+             rdfs:range xsd:string .
+
+
+###  http://example.org/ontology#Week_ID
+ex:Week_ID rdf:type owl:DatatypeProperty ;
+           rdfs:domain ex:Date ;
+           rdfs:range xsd:integer .
+
+
+###  http://example.org/ontology#Year_ID
+ex:Year_ID rdf:type owl:DatatypeProperty ;
+           rdfs:domain ex:Date ;
+           rdfs:range xsd:integer .
+
+
+###  http://example.org/ontology#birth_year
+ex:birth_year rdf:type owl:DatatypeProperty ;
+              rdfs:domain ex:Customer ,
+                          ex:Generation ;
+              rdfs:range xsd:integer .
+
+
+###  http://example.org/ontology#birthdate
+ex:birthdate rdf:type owl:DatatypeProperty ;
+             rdfs:domain ex:Customer ;
+             rdfs:range xsd:date .
+
+
+###  http://example.org/ontology#current_retail_price
+ex:current_retail_price rdf:type owl:DatatypeProperty ;
+                        rdfs:domain ex:Product ;
+                        rdfs:range xsd:decimal .
+
+
+###  http://example.org/ontology#current_wholesale_price
+ex:current_wholesale_price rdf:type owl:DatatypeProperty ;
+                           rdfs:domain ex:Product ;
+                           rdfs:range xsd:decimal .
+
+
+###  http://example.org/ontology#customer_email
+ex:customer_email rdf:type owl:DatatypeProperty ;
+                  rdfs:domain ex:Customer ;
+                  rdfs:range xsd:string .
+
+
+###  http://example.org/ontology#customer_first_name
+ex:customer_first_name rdf:type owl:DatatypeProperty ;
+                       rdfs:domain ex:Customer ;
+                       rdfs:range xsd:string .
+
+
+###  http://example.org/ontology#customer_id
+ex:customer_id rdf:type owl:DatatypeProperty ;
+               rdfs:domain ex:Transaction ;
+               rdfs:range xsd:integer .
+
+
+###  http://example.org/ontology#customer_since
+ex:customer_since rdf:type owl:DatatypeProperty ;
+                  rdfs:domain ex:Customer ;
+                  rdfs:range xsd:date .
+
+
+###  http://example.org/ontology#gender
+ex:gender rdf:type owl:DatatypeProperty ;
+          rdfs:domain ex:Customer ;
+          rdfs:range xsd:string .
+
+
+###  http://example.org/ontology#home_store
+ex:home_store rdf:type owl:DatatypeProperty ;
+              rdfs:domain ex:Customer ;
+              rdfs:range xsd:integer .
+
+
+###  http://example.org/ontology#instore_yn
+ex:instore_yn rdf:type owl:DatatypeProperty ;
+              rdfs:domain ex:Transaction ;
+              rdfs:range xsd:string .
+
+
+###  http://example.org/ontology#line_item_amount
+ex:line_item_amount rdf:type owl:DatatypeProperty ;
+                    rdfs:domain ex:Transaction ;
+                    rdfs:range xsd:decimal .
+
+
+###  http://example.org/ontology#line_item_id
+ex:line_item_id rdf:type owl:DatatypeProperty ;
+                rdfs:domain ex:Transaction ;
+                rdfs:range xsd:integer .
+
+
+###  http://example.org/ontology#loyalty_card_number
+ex:loyalty_card_number rdf:type owl:DatatypeProperty ;
+                       rdfs:domain ex:Customer ;
+                       rdfs:range xsd:string .
+
+
+###  http://example.org/ontology#order
+ex:order rdf:type owl:DatatypeProperty ;
+         rdfs:domain ex:Transaction ;
+         rdfs:range xsd:integer .
+
+
+###  http://example.org/ontology#percentage_waste
+ex:percentage_waste rdf:type owl:DatatypeProperty ;
+                    rdfs:domain ex:Inventory ,
+                                ex:SalesTarget ;
+                    rdfs:range xsd:string .
+
+
+###  http://example.org/ontology#product
+ex:product rdf:type owl:DatatypeProperty ;
+           rdfs:domain ex:Product ;
+           rdfs:range xsd:string .
+
+
+###  http://example.org/ontology#product_category
+ex:product_category rdf:type owl:DatatypeProperty ;
+                    rdfs:domain ex:Product ;
+                    rdfs:range xsd:string .
+
+
+###  http://example.org/ontology#product_description
+ex:product_description rdf:type owl:DatatypeProperty ;
+                       rdfs:domain ex:Product ;
+                       rdfs:range xsd:string .
+
+
+###  http://example.org/ontology#product_group
+ex:product_group rdf:type owl:DatatypeProperty ;
+                 rdfs:domain ex:Product ;
+                 rdfs:range xsd:string .
+
+
+###  http://example.org/ontology#product_id
+ex:product_id rdf:type owl:DatatypeProperty ;
+              rdfs:domain ex:Inventory ,
+                          ex:SalesTarget ,
+                          ex:Transaction ;
+              rdfs:range xsd:integer .
+
+
+###  http://example.org/ontology#product_type
+ex:product_type rdf:type owl:DatatypeProperty ;
+                rdfs:domain ex:Product ;
+                rdfs:range xsd:string .
+
+
+###  http://example.org/ontology#promo_item_yn
+ex:promo_item_yn rdf:type owl:DatatypeProperty ;
+                 rdfs:domain ex:Transaction ;
+                 rdfs:range xsd:string .
+
+
+###  http://example.org/ontology#quantity
+ex:quantity rdf:type owl:DatatypeProperty ;
+            rdfs:domain ex:Inventory ,
+                        ex:SalesTarget ,
+                        ex:Transaction ;
+            rdfs:range xsd:integer .
+
+
+###  http://example.org/ontology#sales_outlet_id
+ex:sales_outlet_id rdf:type owl:DatatypeProperty ;
+                   rdfs:domain ex:Inventory ,
+                               ex:SalesTarget ,
+                               ex:Transaction ;
+                   rdfs:range xsd:integer .
+
+
+###  http://example.org/ontology#staff_id
+ex:staff_id rdf:type owl:DatatypeProperty ;
+            rdfs:domain ex:Transaction ;
+            rdfs:range xsd:integer .
+
+
+###  http://example.org/ontology#tax_exempt_yn
+ex:tax_exempt_yn rdf:type owl:DatatypeProperty ;
+                 rdfs:domain ex:Product ;
+                 rdfs:range xsd:string .
+
+
+###  http://example.org/ontology#transaction_date
+ex:transaction_date rdf:type owl:DatatypeProperty ;
+                    rdfs:domain ex:Transaction ;
+                    rdfs:range xsd:date .
+
+
+###  http://example.org/ontology#transaction_id
+ex:transaction_id rdf:type owl:DatatypeProperty ;
+                  rdfs:domain ex:Transaction ;
+                  rdfs:range xsd:integer .
+
+
+###  http://example.org/ontology#transaction_time
+ex:transaction_time rdf:type owl:DatatypeProperty ;
+                    rdfs:domain ex:Transaction ;
+                    rdfs:range xsd:time .
+
+
+###  http://example.org/ontology#unit_of_measure
+ex:unit_of_measure rdf:type owl:DatatypeProperty ;
+                   rdfs:domain ex:Product ;
+                   rdfs:range xsd:string .
+
+
+###  http://example.org/ontology#unit_price
+ex:unit_price rdf:type owl:DatatypeProperty ;
+              rdfs:domain ex:Product ,
+                          ex:Transaction ;
+              rdfs:range xsd:decimal .
+
+
+###  http://example.org/ontology#waste
+ex:waste rdf:type owl:DatatypeProperty ;
+         rdfs:domain ex:Inventory ,
+                     ex:SalesTarget ;
+         rdfs:range xsd:integer .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://example.org/ontology#Customer
+ex:Customer rdf:type owl:Class .
+
+
+###  http://example.org/ontology#Date
+ex:Date rdf:type owl:Class .
+
+
+###  http://example.org/ontology#Generation
+ex:Generation rdf:type owl:Class .
+
+
+###  http://example.org/ontology#Inventory
+ex:Inventory rdf:type owl:Class .
+
+
+###  http://example.org/ontology#Product
+ex:Product rdf:type owl:Class .
+
+
+###  http://example.org/ontology#SalesOutlet
+ex:SalesOutlet rdf:type owl:Class .
+
+
+###  http://example.org/ontology#SalesTarget
+ex:SalesTarget rdf:type owl:Class .
+
+
+###  http://example.org/ontology#Staff
+ex:Staff rdf:type owl:Class .
+
+
+###  http://example.org/ontology#Transaction
+ex:Transaction rdf:type owl:Class .
+
+
+###  Generated by the OWL API (version 4.5.25.2023-02-15T19:15:49Z) https://github.com/owlcs/owlapi
