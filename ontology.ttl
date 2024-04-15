@@ -1,0 +1,245 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix ex: <http://example.org/ontology#> .
+
+# Classes
+ex:Receipt rdf:type owl:Class .
+ex:Customer rdf:type owl:Class .
+ex:Date rdf:type owl:Class .
+ex:Generation rdf:type owl:Class .
+ex:Inventory rdf:type owl:Class .
+ex:Product rdf:type owl:Class .
+ex:SalesTarget rdf:type owl:Class .
+ex:SalesOutlet rdf:type owl:Class .
+ex:Staff rdf:type owl:Class .
+
+# Data Properties
+ex:transaction_id rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:Receipt ;
+    rdfs:range xsd:integer .
+
+ex:transaction_date rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:Receipt, ex:Date, ex:Inventory, ex:SalesTarget ;
+    rdfs:range xsd:date .
+
+ex:transaction_time rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:Receipt ;
+    rdfs:range xsd:time .
+
+ex:sales_outlet_id rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:Receipt, ex:Inventory, ex:SalesTarget, ex:SalesOutlet ;
+    rdfs:range xsd:integer .
+
+ex:staff_id rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:Receipt, ex:Staff ;
+    rdfs:range xsd:integer .
+
+ex:customer_id rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:Receipt, ex:Customer ;
+    rdfs:range xsd:integer .
+
+ex:instore_yn rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:Receipt ;
+    rdfs:range xsd:string .
+
+ex:order rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:Receipt ;
+    rdfs:range xsd:integer .
+
+ex:line_item_id rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:Receipt ;
+    rdfs:range xsd:integer .
+
+ex:product_id rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:Receipt, ex:Inventory, ex:SalesTarget, ex:Product ;
+    rdfs:range xsd:integer .
+
+ex:quantity rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:Receipt, ex:Inventory, ex:SalesTarget ;
+    rdfs:range xsd:integer .
+
+ex:line_item_amount rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:Receipt ;
+    rdfs:range xsd:decimal .
+
+ex:unit_price rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:Receipt, ex:Product ;
+    rdfs:range xsd:decimal .
+
+ex:promo_item_yn rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:Receipt ;
+    rdfs:range xsd:string .
+
+ex:home_store rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:Customer ;
+    rdfs:range xsd:integer .
+
+ex:customer_first_name rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:Customer ;
+    rdfs:range xsd:string .
+
+ex:customer_email rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:Customer ;
+    rdfs:range xsd:string .
+
+ex:customer_since rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:Customer ;
+    rdfs:range xsd:date .
+
+ex:loyalty_card_number rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:Customer ;
+    rdfs:range xsd:string .
+
+ex:birthdate rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:Customer ;
+    rdfs:range xsd:date .
+
+ex:gender rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:Customer ;
+    rdfs:range xsd:string .
+
+ex:birth_year rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:Customer, ex:Generation ;
+    rdfs:range xsd:integer .
+
+ex:Date_ID rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:Date ;
+    rdfs:range xsd:integer .
+
+ex:Week_ID rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:Date ;
+    rdfs:range xsd:integer .
+
+ex:Week_Desc rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:Date ;
+    rdfs:range xsd:string .
+
+ex:Month_ID rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:Date ;
+    rdfs:range xsd:integer .
+
+ex:Month_Name rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:Date ;
+    rdfs:range xsd:string .
+
+ex:Quarter_ID rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:Date ;
+    rdfs:range xsd:integer .
+
+ex:Quarter_Name rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:Date ;
+    rdfs:range xsd:string .
+
+ex:Year_ID rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:Date ;
+    rdfs:range xsd:integer .
+
+ex:waste rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:Inventory, ex:SalesTarget ;
+    rdfs:range xsd:integer .
+
+ex:percentage_waste rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:Inventory, ex:SalesTarget ;
+    rdfs:range xsd:string .
+
+ex:product_group rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:Product ;
+    rdfs:range xsd:string .
+
+ex:product_category rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:Product ;
+    rdfs:range xsd:string .
+
+ex:product_type rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:Product ;
+    rdfs:range xsd:string .
+
+ex:product rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:Product ;
+    rdfs:range xsd:string .
+
+ex:product_description rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:Product ;
+    rdfs:range xsd:string .
+
+ex:unit_of_measure rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:Product ;
+    rdfs:range xsd:string .
+
+ex:current_wholesale_price rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:Product ;
+    rdfs:range xsd:decimal .
+
+ex:current_retail_price rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:Product ;
+    rdfs:range xsd:decimal .
+
+ex:tax_exempt_yn rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:Product ;
+    rdfs:range xsd:string .
+
+ex:store_square_feet rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:SalesOutlet ;
+    rdfs:range xsd:integer .
+
+ex:store_address rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:SalesOutlet ;
+    rdfs:range xsd:string .
+
+ex:store_city rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:SalesOutlet ;
+    rdfs:range xsd:string .
+
+ex:store_state_province rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:SalesOutlet ;
+    rdfs:range xsd:string .
+
+ex:store_telephone rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:SalesOutlet ;
+    rdfs:range xsd:string .
+
+ex:store_postal_code rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:SalesOutlet ;
+    rdfs:range xsd:string .
+
+ex:store_longitude rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:SalesOutlet ;
+    rdfs:range xsd:decimal .
+
+ex:store_latitude rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:SalesOutlet ;
+    rdfs:range xsd:decimal .
+
+ex:manager rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:SalesOutlet ;
+    rdfs:range xsd:string .
+
+ex:neighborhood rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:SalesOutlet ;
+    rdfs:range xsd:string .
+
+ex:first_name rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:Staff ;
+    rdfs:range xsd:string .
+
+ex:last_name rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:Staff ;
+    rdfs:range xsd:string .
+
+ex:position rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:Staff ;
+    rdfs:range xsd:string .
+
+ex:start_date rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:Staff ;
+    rdfs:range xsd:date .
+
+ex:location rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:Staff ;
+    rdfs:range xsd:string .
+
+# Ontology Declaration
+ex:Ontology rdf:type owl:Ontology ;
+    owl:imports owl: ;
+    rdfs:comment "An ontology for the given CSV files." .
