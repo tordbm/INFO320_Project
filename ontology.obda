@@ -5,11 +5,12 @@ owl:		http://www.w3.org/2002/07/owl#
 rdf:		http://www.w3.org/1999/02/22-rdf-syntax-ns#
 xml:		http://www.w3.org/XML/1998/namespace
 xsd:		http://www.w3.org/2001/XMLSchema#
+obda:		https://w3id.org/obda/vocabulary#
 rdfs:		http://www.w3.org/2000/01/rdf-schema#
 
 [MappingDeclaration] @collection [[
 mappingId	MAPID-03b2b537e37243a0a6d6ce2c2aa5c94e
-target		:STAFF/{STAFF_ID} a owl:NamedIndividual ; ex:first_name {FIRST_NAME}^^xsd:string ; ex:last_name {LAST_NAME}^^xsd:string . :CUSTOMER/{CUSTOMER_ID} a owl:NamedIndividual ; ex:customer_first_name {CUSTOMER_NAME}^^xsd:string . 
+target		:STAFF/{STAFF_ID} a owl:NamedIndividual ; ex:first_name {FIRST_NAME}^^xsd:string ; ex:last_name {LAST_NAME}^^xsd:string ; ex:position {POSITION}^^xsd:string ; ex:start_date {START_DATE}^^xsd:date ; ex:location {LOCATION}^^xsd:string . :CUSTOMER/{CUSTOMER_ID} a owl:NamedIndividual ; ex:customer_first_name {CUSTOMER_NAME}^^xsd:string ; ex:home_store {HOME_STORE}^^xsd:integer ; ex:customer_email {CUSTOMER_EMAIL}^^xsd:string ; ex:customer_since {CUSTOMER_SINCE}^^xsd:date ; ex:loyalty_card_number {LOYALTY_CARD_NUMBER}^^xsd:string ; ex:birthdate {BIRTHDATE}^^xsd:date ; ex:gender {GENDER}^^xsd:string ; ex:birth_year {BIRTH_YEAR}^^xsd:integer . 
 source		SELECT * FROM STAFF, CUSTOMER
 ]]
 
