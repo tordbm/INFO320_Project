@@ -1,0 +1,8 @@
+docker run --rm \
+           -v $PWD/input:/opt/ontop/input \
+           -v $PWD/jdbc:/opt/ontop/jdbc \
+           -e ONTOP_ONTOLOGY_FILE=/opt/ontop/input/ontology-complete.ttl \
+           -e ONTOP_MAPPING_FILE=/opt/ontop/input/ontology-complete.obda \
+           -e ONTOP_PROPERTIES_FILE=/opt/ontop/input/ontology.docker.properties \
+           -p 8080:8080 \
+           ontop/ontop
