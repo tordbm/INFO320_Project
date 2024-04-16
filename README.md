@@ -5,5 +5,5 @@
   <li>Launch Docker</li>
   <li>Run the h2 server</li>
   <li>Run <code>docker-compose up</code> to run the ontop container in docker</li>
-  <li>Go to <http://localhost:8080/> </li>
+  <li>Go to localhost:8080 </li>
 </ul>
