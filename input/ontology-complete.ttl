@@ -385,6 +385,12 @@ ex:store_telephone rdf:type owl:DatatypeProperty ;
                    rdfs:range xsd:string .
 
 
+###  http://example.org/ontology#store_type
+ex:store_type rdf:type owl:DatatypeProperty ;
+              rdfs:domain ex:SalesOutlet ;
+              rdfs:range xsd:string .
+
+
 ###  http://example.org/ontology#tax_exempt_yn
 ex:tax_exempt_yn rdf:type owl:DatatypeProperty ;
                  rdfs:domain ex:Product ;

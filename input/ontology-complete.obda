@@ -50,7 +50,7 @@ target		ex:{TRANSACTION_ID} a ex:Reciept ; ex:transaction_date {TRANSACTION_DATE
 source		SELECT * FROM Reciepts
 
 mappingId	sales_outlet_id-sales_outlet
-target		ex:{sales_outlet_id} a ex:SalesOutlet ; ex:store_square_feet {store_square_feet}^^xsd:integer ; ex:store_address {store_address}^^xsd:string ; ex:store_city {store_city}^^xsd:string ; ex:store_state_province {store_state_province}^^xsd:string ; ex:store_telephone {store_telephone}^^xsd:string ; ex:store_postal_code {store_postal_code}^^xsd:string ; ex:store_longitude {store_longitude}^^xsd:decimal ; ex:store_latitude {store_latitude}^^xsd:decimal ; ex:manager {manager}^^xsd:string ; ex:neighborhood {neighorhood}^^xsd:string . 
+target		ex:{sales_outlet_id} a ex:SalesOutlet ; ex:store_square_feet {store_square_feet}^^xsd:integer ; ex:store_type {sales_outlet_type}^^xsd:string ; ex:store_address {store_address}^^xsd:string ; ex:store_city {store_city}^^xsd:string ; ex:store_state_province {store_state_province}^^xsd:string ; ex:store_telephone {store_telephone}^^xsd:string ; ex:store_postal_code {store_postal_code}^^xsd:string ; ex:store_longitude {store_longitude}^^xsd:decimal ; ex:store_latitude {store_latitude}^^xsd:decimal ; ex:manager {manager}^^xsd:string ; ex:neighborhood {neighorhood}^^xsd:string . 
 source		SELECT * FROM sales_outlet
 
 mappingId	sales_outlet_id-sales_target
