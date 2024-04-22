@@ -304,6 +304,12 @@ ex:quantity rdf:type owl:DatatypeProperty ;
             rdfs:range xsd:integer .
 
 
+###  http://example.org/ontology#quantity_sold
+ex:quantity_sold rdf:type owl:DatatypeProperty ;
+                 rdfs:domain ex:PastryInventory ;
+                 rdfs:range xsd:integer .
+
+
 ###  http://example.org/ontology#sales_outlet_id
 ex:sales_outlet_id rdf:type owl:DatatypeProperty ;
                    rdfs:domain ex:Reciept ,
@@ -323,6 +329,12 @@ ex:staff_id rdf:type owl:DatatypeProperty ;
 ex:start_date rdf:type owl:DatatypeProperty ;
               rdfs:domain ex:Staff ;
               rdfs:range xsd:date .
+
+
+###  http://example.org/ontology#start_of_day
+ex:start_of_day rdf:type owl:DatatypeProperty ;
+                rdfs:domain ex:PastryInventory ;
+                rdfs:range xsd:integer .
 
 
 ###  http://example.org/ontology#store_address
@@ -420,7 +432,7 @@ ex:unit_price rdf:type owl:DatatypeProperty ;
 
 ###  http://example.org/ontology#waste
 ex:waste rdf:type owl:DatatypeProperty ;
-         rdfs:domain ex:SalesTarget ;
+         rdfs:domain ex:PastryInventory ;
          rdfs:range xsd:integer .
 
 
@@ -465,6 +477,10 @@ ex:Generation rdf:type owl:Class .
 ###  http://example.org/ontology#OlderMillennials
 ex:OlderMillennials rdf:type owl:Class ;
                     rdfs:subClassOf ex:Generation .
+
+
+###  http://example.org/ontology#PastryInventory
+ex:PastryInventory rdf:type owl:Class .
 
 
 ###  http://example.org/ontology#Product

@@ -56,5 +56,9 @@ source		SELECT * FROM sales_outlet
 mappingId	sales_outlet_id-sales_target
 target		ex:{sales_outlet_id} a ex:SalesTarget ; ex:year_month {year_month}^^xsd:string ; ex:beans_goal {beans_goal}^^xsd:integer ; ex:beverage_goal {beverage_goal}^^xsd:integer ; ex:food_goal {food_goal}^^xsd:integer ; ex:merchandise_goal {merchandise _goal}^^xsd:integer . 
 source		SELECT * FROM sales_targets
+
+mappingId	sales_outlet_id-pastry-inventory
+target		ex:{sales_outlet_id} a ex:PastryInventory ; ex:transaction_date {transaction_date}^^xsd:date ; ex:product_id {product_id}^^xsd:integer ; ex:start_of_day {start_of_day}^^xsd:integer ; ex:quantity_sold {quantity_sold}^^xsd:integer ; ex:waste {waste}^^xsd:integer . 
+source		SELECT * FROM pastry_inventory
 ]]
 
