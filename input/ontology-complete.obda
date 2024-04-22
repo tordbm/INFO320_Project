@@ -9,8 +9,40 @@ obda:		https://w3id.org/obda/vocabulary#
 rdfs:		http://www.w3.org/2000/01/rdf-schema#
 
 [MappingDeclaration] @collection [[
-mappingId	MAPID-03b2b537e37243a0a6d6ce2c2aa5c94e
-target		:STAFF/{STAFF_ID} a owl:NamedIndividual ; ex:first_name {FIRST_NAME}^^xsd:string ; ex:last_name {LAST_NAME}^^xsd:string ; ex:position {POSITION}^^xsd:string ; ex:start_date {START_DATE}^^xsd:date ; ex:location {LOCATION}^^xsd:string . :CUSTOMER/{CUSTOMER_ID} a owl:NamedIndividual ; ex:customer_first_name {CUSTOMER_NAME}^^xsd:string ; ex:home_store {HOME_STORE}^^xsd:integer ; ex:customer_email {CUSTOMER_EMAIL}^^xsd:string ; ex:customer_since {CUSTOMER_SINCE}^^xsd:date ; ex:loyalty_card_number {LOYALTY_CARD_NUMBER}^^xsd:string ; ex:birthdate {BIRTHDATE}^^xsd:date ; ex:gender {GENDER}^^xsd:string ; ex:birth_year {BIRTH_YEAR}^^xsd:integer . 
-source		SELECT * FROM STAFF, CUSTOMER
+mappingId	staff_id-staff
+target		ex:{STAFF_ID} a ex:Staff ; ex:first_name {FIRST_NAME}^^xsd:string ; ex:last_name {LAST_NAME}^^xsd:string ; ex:position {POSITION}^^xsd:string ; ex:start_date {START_DATE}^^xsd:date ; ex:location {LOCATION}^^xsd:string . 
+source		SELECT * FROM STAFF
+
+mappingId	staff_id-product_id
+target		ex:{STAFF_ID} a ex:Staff ; ex:sells ex:{PRODUCT_ID} . ex:{PRODUCT_ID} a ex:Product . 
+source		SELECT STAFF_ID, PRODUCT_ID FROM RECIEPTS
+
+mappingId	MAPID-a651c26eee864f759b68e8ec4d8c9b22
+target		:PRODUCT/{PRODUCT_ID} a ex:Product ; ex:product_group {PRODUCT_GROUP}^^xsd:string . 
+source		SELECT * FROM PRODUCT
+
+mappingId	generation-baby_boomer
+target		ex:{GENERATION} a ex:BabyBoomers ; ex:birth_year ex:{BIRTH_YEAR} . 
+source		SELECT * FROM GENERATIONS WHERE GENERATION = 'Baby Boomers'
+
+mappingId	customer_id-customer
+target		ex:{CUSTOMER_ID} a ex:Customer ; ex:customer_first_name {CUSTOMER_NAME}^^xsd:string ; ex:home_store {HOME_STORE}^^xsd:integer ; ex:customer_email {CUSTOMER_EMAIL}^^xsd:string ; ex:customer_since {CUSTOMER_SINCE}^^xsd:date ; ex:loyalty_card_number {LOYALTY_CARD_NUMBER}^^xsd:string ; ex:birthdate {BIRTHDATE}^^xsd:date ; ex:gender {GENDER}^^xsd:string ; ex:birth_year {BIRTH_YEAR}^^xsd:integer . 
+source		Select * from customer
+
+mappingId	generation-genX
+target		ex:{GENERATION} a ex:GenX ; ex:birth_year ex:{BIRTH_YEAR} . 
+source		select * from generations where generation = 'Gen X'
+
+mappingId	generation-older_millenials
+target		ex:{GENERATION} a ex:OlderMillennials ; ex:birth_year ex:{BIRTH_YEAR} . 
+source		select * from generations where generation = 'Older Millennials'
+
+mappingId	generation-younger_millenials
+target		ex:{GENERATION} a ex:YoungerMillennials ; ex:birth_year ex:{BIRTH_YEAR} . 
+source		select * from generations where generation = 'Younger Millennials'
+
+mappingId	generation-genZ
+target		ex:{GENERATION} a ex:GenZ ; ex:birth_year ex:{BIRTH_YEAR} . 
+source		select * from generations where generation = 'Gen Z'
 ]]
 
