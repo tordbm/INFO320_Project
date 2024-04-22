@@ -135,7 +135,7 @@ ex:customer_first_name rdf:type owl:DatatypeProperty ;
 ###  http://example.org/ontology#customer_id
 ex:customer_id rdf:type owl:DatatypeProperty ;
                rdfs:domain ex:Customer ,
-                           ex:Receipt ;
+                           ex:Reciept ;
                rdfs:range xsd:integer .
 
 
@@ -165,7 +165,7 @@ ex:home_store rdf:type owl:DatatypeProperty ;
 
 ###  http://example.org/ontology#instore_yn
 ex:instore_yn rdf:type owl:DatatypeProperty ;
-              rdfs:domain ex:Receipt ;
+              rdfs:domain ex:Reciept ;
               rdfs:range xsd:string .
 
 
@@ -177,13 +177,13 @@ ex:last_name rdf:type owl:DatatypeProperty ;
 
 ###  http://example.org/ontology#line_item_amount
 ex:line_item_amount rdf:type owl:DatatypeProperty ;
-                    rdfs:domain ex:Receipt ;
+                    rdfs:domain ex:Reciept ;
                     rdfs:range xsd:decimal .
 
 
 ###  http://example.org/ontology#line_item_id
 ex:line_item_id rdf:type owl:DatatypeProperty ;
-                rdfs:domain ex:Receipt ;
+                rdfs:domain ex:Reciept ;
                 rdfs:range xsd:integer .
 
 
@@ -213,14 +213,13 @@ ex:neighborhood rdf:type owl:DatatypeProperty ;
 
 ###  http://example.org/ontology#order
 ex:order rdf:type owl:DatatypeProperty ;
-         rdfs:domain ex:Receipt ;
+         rdfs:domain ex:Reciept ;
          rdfs:range xsd:integer .
 
 
 ###  http://example.org/ontology#percentage_waste
 ex:percentage_waste rdf:type owl:DatatypeProperty ;
-                    rdfs:domain ex:Inventory ,
-                                ex:SalesTarget ;
+                    rdfs:domain ex:SalesTarget ;
                     rdfs:range xsd:string .
 
 
@@ -256,9 +255,8 @@ ex:product_group rdf:type owl:DatatypeProperty ;
 
 ###  http://example.org/ontology#product_id
 ex:product_id rdf:type owl:DatatypeProperty ;
-              rdfs:domain ex:Inventory ,
-                          ex:Product ,
-                          ex:Receipt ,
+              rdfs:domain ex:Product ,
+                          ex:Reciept ,
                           ex:SalesTarget ;
               rdfs:range xsd:integer .
 
@@ -271,22 +269,20 @@ ex:product_type rdf:type owl:DatatypeProperty ;
 
 ###  http://example.org/ontology#promo_item_yn
 ex:promo_item_yn rdf:type owl:DatatypeProperty ;
-                 rdfs:domain ex:Receipt ;
+                 rdfs:domain ex:Reciept ;
                  rdfs:range xsd:string .
 
 
 ###  http://example.org/ontology#quantity
 ex:quantity rdf:type owl:DatatypeProperty ;
-            rdfs:domain ex:Inventory ,
-                        ex:Receipt ,
+            rdfs:domain ex:Reciept ,
                         ex:SalesTarget ;
             rdfs:range xsd:integer .
 
 
 ###  http://example.org/ontology#sales_outlet_id
 ex:sales_outlet_id rdf:type owl:DatatypeProperty ;
-                   rdfs:domain ex:Inventory ,
-                               ex:Receipt ,
+                   rdfs:domain ex:Reciept ,
                                ex:SalesOutlet ,
                                ex:SalesTarget ;
                    rdfs:range xsd:integer .
@@ -294,7 +290,7 @@ ex:sales_outlet_id rdf:type owl:DatatypeProperty ;
 
 ###  http://example.org/ontology#staff_id
 ex:staff_id rdf:type owl:DatatypeProperty ;
-            rdfs:domain ex:Receipt ,
+            rdfs:domain ex:Reciept ,
                         ex:Staff ;
             rdfs:range xsd:integer .
 
@@ -362,21 +358,20 @@ ex:tax_exempt_yn rdf:type owl:DatatypeProperty ;
 ###  http://example.org/ontology#transaction_date
 ex:transaction_date rdf:type owl:DatatypeProperty ;
                     rdfs:domain ex:Date ,
-                                ex:Inventory ,
-                                ex:Receipt ,
+                                ex:Reciept ,
                                 ex:SalesTarget ;
                     rdfs:range xsd:date .
 
 
 ###  http://example.org/ontology#transaction_id
 ex:transaction_id rdf:type owl:DatatypeProperty ;
-                  rdfs:domain ex:Receipt ;
+                  rdfs:domain ex:Reciept ;
                   rdfs:range xsd:integer .
 
 
 ###  http://example.org/ontology#transaction_time
 ex:transaction_time rdf:type owl:DatatypeProperty ;
-                    rdfs:domain ex:Receipt ;
+                    rdfs:domain ex:Reciept ;
                     rdfs:range xsd:time .
 
 
@@ -389,14 +384,13 @@ ex:unit_of_measure rdf:type owl:DatatypeProperty ;
 ###  http://example.org/ontology#unit_price
 ex:unit_price rdf:type owl:DatatypeProperty ;
               rdfs:domain ex:Product ,
-                          ex:Receipt ;
+                          ex:Reciept ;
               rdfs:range xsd:decimal .
 
 
 ###  http://example.org/ontology#waste
 ex:waste rdf:type owl:DatatypeProperty ;
-         rdfs:domain ex:Inventory ,
-                     ex:SalesTarget ;
+         rdfs:domain ex:SalesTarget ;
          rdfs:range xsd:integer .
 
 
@@ -432,10 +426,6 @@ ex:GenZ rdf:type owl:Class ;
 ex:Generation rdf:type owl:Class .
 
 
-###  http://example.org/ontology#Inventory
-ex:Inventory rdf:type owl:Class .
-
-
 ###  http://example.org/ontology#OlderMillennials
 ex:OlderMillennials rdf:type owl:Class ;
                     rdfs:subClassOf ex:Generation .
@@ -445,8 +435,8 @@ ex:OlderMillennials rdf:type owl:Class ;
 ex:Product rdf:type owl:Class .
 
 
-###  http://example.org/ontology#Receipt
-ex:Receipt rdf:type owl:Class .
+###  http://example.org/ontology#Reciept
+ex:Reciept rdf:type owl:Class .
 
 
 ###  http://example.org/ontology#SalesOutlet
