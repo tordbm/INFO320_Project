@@ -46,7 +46,7 @@ target		ex:{GENERATION} a ex:GenZ ; ex:birth_year {BIRTH_YEAR}^^xsd:integer .
 source		select * from generations where generation = 'Gen Z'
 
 mappingId	transaction_id-receipt
-target		ex:{TRANSACTION_ID} a ex:Receipt ; ex:transaction_date {TRANSACTION_DATE}^^xsd:date ; ex:transaction_time {TRANSACTION_TIME}^^xsd:integer ; ex:sales_outlet_id {SALES_OUTLET_ID}^^xsd:integer ; ex:staff_id {STAFF_ID}^^xsd:integer ; ex:customer_id {CUSTOMER_ID}^^xsd:integer ; ex:instore_yn {INSTORE_YN}^^xsd:string ; ex:order {ORDER_ID}^^xsd:integer ; ex:line_item_id {LINE_ITEM_ID}^^xsd:integer ; ex:product_id {PRODUCT_ID}^^xsd:integer ; ex:quantity {QUANTITY}^^xsd:integer ; ex:line_item_amount {LINE_ITEM_AMOUNT}^^xsd:decimal ; ex:unit_price {UNIT_PRICE}^^xsd:decimal ; ex:promo_item_yn {PROMO_ITEM_YN}^^xsd:string . 
+target		ex:{TRANSACTION_ID} a ex:Reciept ; ex:transaction_date {TRANSACTION_DATE}^^xsd:date ; ex:transaction_time {TRANSACTION_TIME}^^xsd:integer ; ex:sales_outlet_id {SALES_OUTLET_ID}^^xsd:integer ; ex:staff_id {STAFF_ID}^^xsd:integer ; ex:customer_id {CUSTOMER_ID}^^xsd:integer ; ex:instore_yn {INSTORE_YN}^^xsd:string ; ex:order {ORDER_ID}^^xsd:integer ; ex:line_item_id {LINE_ITEM_ID}^^xsd:integer ; ex:product_id {PRODUCT_ID}^^xsd:integer ; ex:quantity {QUANTITY}^^xsd:integer ; ex:line_item_amount {LINE_ITEM_AMOUNT}^^xsd:decimal ; ex:unit_price {UNIT_PRICE}^^xsd:decimal ; ex:promo_item_yn {PROMO_ITEM_YN}^^xsd:string . 
 source		SELECT * FROM Reciepts
 
 mappingId	sales_outlet_id-sales_outlet
@@ -54,7 +54,7 @@ target		ex:{sales_outlet_id} a ex:SalesOutlet ; ex:store_square_feet {store_squa
 source		SELECT * FROM sales_outlet
 
 mappingId	sales_outlet_id-sales_target
-target		ex:{sales_outlet_id} a ex:SalesTarget . 
-source		SELECT * FROM sales_outlet
+target		ex:{sales_outlet_id} a ex:SalesTarget ; ex:year_month {year_month}^^xsd:string ; ex:beans_goal {beans_goal}^^xsd:integer ; ex:beverage_goal {beverage_goal}^^xsd:integer ; ex:food_goal {food_goal}^^xsd:integer ; ex:merchandise_goal {merchandise _goal}^^xsd:integer . 
+source		SELECT * FROM sales_targets
 ]]
 

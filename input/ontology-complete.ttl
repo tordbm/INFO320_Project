@@ -95,6 +95,18 @@ ex:Year_ID rdf:type owl:DatatypeProperty ;
            rdfs:range xsd:integer .
 
 
+###  http://example.org/ontology#beans_goal
+ex:beans_goal rdf:type owl:DatatypeProperty ;
+              rdfs:domain ex:SalesTarget ;
+              rdfs:range xsd:integer .
+
+
+###  http://example.org/ontology#beverage_goal
+ex:beverage_goal rdf:type owl:DatatypeProperty ;
+                 rdfs:domain ex:SalesTarget ;
+                 rdfs:range xsd:integer .
+
+
 ###  http://example.org/ontology#birth_year
 ex:birth_year rdf:type owl:DatatypeProperty ;
               rdfs:domain ex:Customer ,
@@ -151,6 +163,12 @@ ex:first_name rdf:type owl:DatatypeProperty ;
               rdfs:range xsd:string .
 
 
+###  http://example.org/ontology#food_goal
+ex:food_goal rdf:type owl:DatatypeProperty ;
+             rdfs:domain ex:SalesTarget ;
+             rdfs:range xsd:integer .
+
+
 ###  http://example.org/ontology#gender
 ex:gender rdf:type owl:DatatypeProperty ;
           rdfs:domain ex:Customer ;
@@ -203,6 +221,12 @@ ex:loyalty_card_number rdf:type owl:DatatypeProperty ;
 ex:manager rdf:type owl:DatatypeProperty ;
            rdfs:domain ex:SalesOutlet ;
            rdfs:range xsd:string .
+
+
+###  http://example.org/ontology#merchandise_goal
+ex:merchandise_goal rdf:type owl:DatatypeProperty ;
+                    rdfs:domain ex:SalesTarget ;
+                    rdfs:range xsd:integer .
 
 
 ###  http://example.org/ontology#neighborhood
@@ -355,6 +379,12 @@ ex:tax_exempt_yn rdf:type owl:DatatypeProperty ;
                  rdfs:range xsd:string .
 
 
+###  http://example.org/ontology#total_goal
+ex:total_goal rdf:type owl:DatatypeProperty ;
+              rdfs:domain ex:SalesTarget ;
+              rdfs:range xsd:integer .
+
+
 ###  http://example.org/ontology#transaction_date
 ex:transaction_date rdf:type owl:DatatypeProperty ;
                     rdfs:domain ex:Date ,
@@ -392,6 +422,12 @@ ex:unit_price rdf:type owl:DatatypeProperty ;
 ex:waste rdf:type owl:DatatypeProperty ;
          rdfs:domain ex:SalesTarget ;
          rdfs:range xsd:integer .
+
+
+###  http://example.org/ontology#year_month
+ex:year_month rdf:type owl:DatatypeProperty ;
+              rdfs:domain ex:SalesTarget ;
+              rdfs:range xsd:string .
 
 
 #################################################################
