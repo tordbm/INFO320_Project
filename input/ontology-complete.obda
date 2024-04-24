@@ -14,7 +14,7 @@ target		ex:{STAFF_ID} a ex:Staff ; ex:first_name {FIRST_NAME}^^xsd:string ; ex:l
 source		SELECT * FROM STAFF
 
 mappingId	staff_id-product_id
-target		ex:{STAFF_ID} a ex:Staff ; ex:sells ex:{PRODUCT_ID} . ex:{PRODUCT_ID} a ex:Product . 
+target		ex:{STAFF_ID} a ex:Staff ; ex:sells ex:{PRODUCT_ID} ; ex:appearsOn ex:Reciept . ex:{PRODUCT_ID} a ex:Product . 
 source		SELECT STAFF_ID, PRODUCT_ID FROM RECIEPTS
 
 mappingId	MAPID-a651c26eee864f759b68e8ec4d8c9b22
@@ -58,7 +58,7 @@ target		ex:{sales_outlet_id} a ex:SalesTarget ; ex:year_month {year_month}^^xsd:
 source		SELECT * FROM sales_targets
 
 mappingId	sales_outlet_id-pastry-inventory
-target		ex:{sales_outlet_id} a ex:PastryInventory ; ex:transaction_date {transaction_date}^^xsd:date ; ex:product_id {product_id}^^xsd:integer ; ex:start_of_day {start_of_day}^^xsd:integer ; ex:quantity_sold {quantity_sold}^^xsd:integer ; ex:waste {waste}^^xsd:integer . 
+target		ex:{id} a ex:PastryInventory ; ex:sales_outlet_id {sales_outlet_id}^^xsd:integer ; ex:transaction_date {transaction_date}^^xsd:date ; ex:product_id {product_id}^^xsd:integer ; ex:start_of_day {start_of_day}^^xsd:integer ; ex:quantity_sold {quantity_sold}^^xsd:integer ; ex:waste {waste}^^xsd:integer . 
 source		SELECT * FROM pastry_inventory
 ]]
 

@@ -8,8 +8,10 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 PREFIX obda: <https://w3id.org/obda/vocabulary#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
-SELECT  ?staff ?product
+
+SELECT ?staff ?product
 WHERE {
-?staff rdf:type ex:Staff .
-?staff ex:sells ?product .
+  ?staff rdf:type ex:Staff ;
+           ex:sells ?product ;
+  ?product rdf:type ex:Product .
 }

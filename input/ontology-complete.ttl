@@ -28,19 +28,55 @@ xsd:time rdf:type rdfs:Datatype .
 #    Object Properties
 #################################################################
 
+###  http://example.org/ontology#appearsOn
+ex:appearsOn rdf:type owl:ObjectProperty ;
+             rdfs:domain ex:Customer ,
+                         ex:Product ,
+                         ex:Reciept ,
+                         ex:SalesOutlet ,
+                         ex:Staff .
+
+
 ###  http://example.org/ontology#bornIn
 ex:bornIn rdf:type owl:ObjectProperty ;
           rdfs:domain ex:Customer ,
                       ex:Generation .
 
 
+###  http://example.org/ontology#buys
+ex:buys rdf:type owl:ObjectProperty ;
+        rdfs:domain ex:Customer ,
+                    ex:Product .
+
+
+###  http://example.org/ontology#hasGoal
+ex:hasGoal rdf:type owl:ObjectProperty .
+
+
+###  http://example.org/ontology#partOf
+ex:partOf rdf:type owl:ObjectProperty ;
+          rdfs:domain ex:PastryInventory ,
+                      ex:Product ,
+                      ex:SalesOutlet .
+
+
 ###  http://example.org/ontology#sells
 ex:sells rdf:type owl:ObjectProperty ;
-         rdfs:domain ex:Staff .
+         rdfs:domain ex:Product ,
+                     ex:Reciept ,
+                     ex:Staff .
 
 
 ###  http://example.org/ontology#worksAt
-ex:worksAt rdf:type owl:ObjectProperty .
+ex:worksAt rdf:type owl:ObjectProperty ;
+           rdfs:domain ex:SalesOutlet ,
+                       ex:Staff .
+
+
+###  http://www.w3.org/2002/07/owl#topObjectProperty
+owl:topObjectProperty rdfs:domain ex:Product ,
+                                  ex:Reciept ,
+                                  ex:Staff .
 
 
 #################################################################
