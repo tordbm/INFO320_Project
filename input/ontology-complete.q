@@ -1,5 +1,5 @@
 [QueryItem="example"]
-PREFIX : <http://example.org/ontology#Ontology#>
+PREFIX : <http://example.org/ontology#>
 PREFIX ex: <http://example.org/ontology#>
 PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
@@ -9,9 +9,8 @@ PREFIX obda: <https://w3id.org/obda/vocabulary#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
 
-SELECT ?staff ?product
+SELECT ?staff ?reciept
 WHERE {
-  ?staff rdf:type ex:Staff ;
-           ex:sells ?product ;
-  ?product rdf:type ex:Product .
+
+?staff :appearsOn ?reciept .
 }

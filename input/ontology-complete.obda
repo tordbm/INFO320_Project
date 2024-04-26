@@ -1,5 +1,5 @@
 [PrefixDeclaration]
-:		http://example.org/ontology#Ontology#
+:		http://example.org/ontology#
 ex:		http://example.org/ontology#
 owl:		http://www.w3.org/2002/07/owl#
 rdf:		http://www.w3.org/1999/02/22-rdf-syntax-ns#
@@ -10,55 +10,55 @@ rdfs:		http://www.w3.org/2000/01/rdf-schema#
 
 [MappingDeclaration] @collection [[
 mappingId	staff_id-staff
-target		ex:{STAFF_ID} a ex:Staff ; ex:first_name {FIRST_NAME}^^xsd:string ; ex:last_name {LAST_NAME}^^xsd:string ; ex:position {POSITION}^^xsd:string ; ex:start_date {START_DATE}^^xsd:date ; ex:location {LOCATION}^^xsd:string . 
+target		:{STAFF_ID} a :Staff ; :first_name {FIRST_NAME}^^xsd:string ; :last_name {LAST_NAME}^^xsd:string ; :position {POSITION}^^xsd:string ; :start_date {START_DATE}^^xsd:date ; :location {LOCATION}^^xsd:string . 
 source		SELECT * FROM STAFF
 
 mappingId	staff_id-product_id
-target		ex:{STAFF_ID} a ex:Staff ; ex:sells ex:{PRODUCT_ID} ; ex:appearsOn ex:Reciept . ex:{PRODUCT_ID} a ex:Product . 
-source		SELECT STAFF_ID, PRODUCT_ID FROM RECIEPTS
+target		:Staff/{STAFF_ID} :staffAppearsOn :Reciept/{TRANSACTION_ID} . 
+source		SELECT STAFF_ID, TRANSACTION_ID FROM RECIEPTS
 
 mappingId	MAPID-a651c26eee864f759b68e8ec4d8c9b22
-target		:PRODUCT/{PRODUCT_ID} a ex:Product ; ex:product_group {PRODUCT_GROUP}^^xsd:string . 
+target		:PRODUCT/{PRODUCT_ID} a :Product ; :product_group {PRODUCT_GROUP}^^xsd:string . 
 source		SELECT * FROM PRODUCT
 
 mappingId	generation-baby_boomer
-target		ex:{GENERATION} a ex:BabyBoomers ; ex:birth_year {BIRTH_YEAR}^^xsd:integer . 
+target		:{GENERATION} a :BabyBoomers ; :birth_year {BIRTH_YEAR}^^xsd:integer . 
 source		SELECT * FROM GENERATIONS WHERE GENERATION = 'Baby Boomers'
 
 mappingId	customer_id-customer
-target		ex:{CUSTOMER_ID} a ex:Customer ; ex:customer_first_name {CUSTOMER_NAME}^^xsd:string ; ex:home_store {HOME_STORE}^^xsd:integer ; ex:customer_email {CUSTOMER_EMAIL}^^xsd:string ; ex:customer_since {CUSTOMER_SINCE}^^xsd:date ; ex:loyalty_card_number {LOYALTY_CARD_NUMBER}^^xsd:string ; ex:birthdate {BIRTHDATE}^^xsd:date ; ex:gender {GENDER}^^xsd:string ; ex:birth_year {BIRTH_YEAR}^^xsd:integer . 
+target		:{CUSTOMER_ID} a :Customer ; :customer_first_name {CUSTOMER_NAME}^^xsd:string ; :home_store {HOME_STORE}^^xsd:integer ; :customer_email {CUSTOMER_EMAIL}^^xsd:string ; :customer_since {CUSTOMER_SINCE}^^xsd:date ; :loyalty_card_number {LOYALTY_CARD_NUMBER}^^xsd:string ; :birthdate {BIRTHDATE}^^xsd:date ; :gender {GENDER}^^xsd:string ; :birth_year {BIRTH_YEAR}^^xsd:integer . 
 source		Select * from customer
 
 mappingId	generation-genX
-target		ex:{GENERATION} a ex:GenX ; ex:birth_year {BIRTH_YEAR}^^xsd:integer . 
+target		:{GENERATION} a :GenX ; :birth_year {BIRTH_YEAR}^^xsd:integer . 
 source		select * from generations where generation = 'Gen X'
 
 mappingId	generation-older_millenials
-target		ex:{GENERATION} a ex:OlderMillennials ; ex:birth_year {BIRTH_YEAR}^^xsd:integer . 
+target		:{GENERATION} a :OlderMillennials ; :birth_year {BIRTH_YEAR}^^xsd:integer . 
 source		select * from generations where generation = 'Older Millennials'
 
 mappingId	generation-younger_millenials
-target		ex:{GENERATION} a ex:YoungerMillennials ; ex:birth_year {BIRTH_YEAR}^^xsd:integer . 
+target		:{GENERATION} a :YoungerMillennials ; :birth_year {BIRTH_YEAR}^^xsd:integer . 
 source		select * from generations where generation = 'Younger Millennials'
 
 mappingId	generation-genZ
-target		ex:{GENERATION} a ex:GenZ ; ex:birth_year {BIRTH_YEAR}^^xsd:integer . 
+target		:{GENERATION} a :GenZ ; :birth_year {BIRTH_YEAR}^^xsd:integer . 
 source		select * from generations where generation = 'Gen Z'
 
 mappingId	transaction_id-receipt
-target		ex:{TRANSACTION_ID} a ex:Reciept ; ex:transaction_date {TRANSACTION_DATE}^^xsd:date ; ex:transaction_time {TRANSACTION_TIME}^^xsd:integer ; ex:sales_outlet_id {SALES_OUTLET_ID}^^xsd:integer ; ex:staff_id {STAFF_ID}^^xsd:integer ; ex:customer_id {CUSTOMER_ID}^^xsd:integer ; ex:instore_yn {INSTORE_YN}^^xsd:string ; ex:order {ORDER_ID}^^xsd:integer ; ex:line_item_id {LINE_ITEM_ID}^^xsd:integer ; ex:product_id {PRODUCT_ID}^^xsd:integer ; ex:quantity {QUANTITY}^^xsd:integer ; ex:line_item_amount {LINE_ITEM_AMOUNT}^^xsd:decimal ; ex:unit_price {UNIT_PRICE}^^xsd:decimal ; ex:promo_item_yn {PROMO_ITEM_YN}^^xsd:string . 
+target		:{TRANSACTION_ID} a :Reciept ; :transaction_date {TRANSACTION_DATE}^^xsd:date ; :transaction_time {TRANSACTION_TIME}^^xsd:integer ; :salesOutletAppearsOn :SalesOutlet/{SALES_OUTLET_ID} ; :staffAppearsOn :Staff/{STAFF_ID} ; :customerAppearsOn :Customer/{CUSTOMER_ID} ; :instore_yn {INSTORE_YN}^^xsd:string ; :order {ORDER_ID}^^xsd:integer ; :line_item_id {LINE_ITEM_ID}^^xsd:integer ; :productAppearsOn :Product/{PRODUCT_ID} ; :quantity {QUANTITY}^^xsd:integer ; :line_item_amount {LINE_ITEM_AMOUNT}^^xsd:decimal ; :unit_price {UNIT_PRICE}^^xsd:decimal ; :promo_item_yn {PROMO_ITEM_YN}^^xsd:string . 
 source		SELECT * FROM Reciepts
 
 mappingId	sales_outlet_id-sales_outlet
-target		ex:{sales_outlet_id} a ex:SalesOutlet ; ex:store_square_feet {store_square_feet}^^xsd:integer ; ex:store_type {sales_outlet_type}^^xsd:string ; ex:store_address {store_address}^^xsd:string ; ex:store_city {store_city}^^xsd:string ; ex:store_state_province {store_state_province}^^xsd:string ; ex:store_telephone {store_telephone}^^xsd:string ; ex:store_postal_code {store_postal_code}^^xsd:string ; ex:store_longitude {store_longitude}^^xsd:decimal ; ex:store_latitude {store_latitude}^^xsd:decimal ; ex:manager {manager}^^xsd:string ; ex:neighborhood {neighorhood}^^xsd:string . 
+target		:{sales_outlet_id} a :SalesOutlet ; :store_square_feet {store_square_feet}^^xsd:integer ; :store_type {sales_outlet_type}^^xsd:string ; :store_address {store_address}^^xsd:string ; :store_city {store_city}^^xsd:string ; :store_state_province {store_state_province}^^xsd:string ; :store_telephone {store_telephone}^^xsd:string ; :store_postal_code {store_postal_code}^^xsd:string ; :store_longitude {store_longitude}^^xsd:decimal ; :store_latitude {store_latitude}^^xsd:decimal ; :manager {manager}^^xsd:string ; :neighborhood {neighorhood}^^xsd:string . 
 source		SELECT * FROM sales_outlet
 
 mappingId	sales_outlet_id-sales_target
-target		ex:{sales_outlet_id} a ex:SalesTarget ; ex:year_month {year_month}^^xsd:string ; ex:beans_goal {beans_goal}^^xsd:integer ; ex:beverage_goal {beverage_goal}^^xsd:integer ; ex:food_goal {food_goal}^^xsd:integer ; ex:merchandise_goal {merchandise _goal}^^xsd:integer . 
+target		:{sales_outlet_id} a :SalesTarget ; :year_month {year_month}^^xsd:string ; :beans_goal {beans_goal}^^xsd:integer ; :beverage_goal {beverage_goal}^^xsd:integer ; :food_goal {food_goal}^^xsd:integer ; :merchandise_goal {merchandise _goal}^^xsd:integer . 
 source		SELECT * FROM sales_targets
 
 mappingId	sales_outlet_id-pastry-inventory
-target		ex:{id} a ex:PastryInventory ; ex:sales_outlet_id {sales_outlet_id}^^xsd:integer ; ex:transaction_date {transaction_date}^^xsd:date ; ex:product_id {product_id}^^xsd:integer ; ex:start_of_day {start_of_day}^^xsd:integer ; ex:quantity_sold {quantity_sold}^^xsd:integer ; ex:waste {waste}^^xsd:integer . 
+target		:{id} a :PastryInventory ; :sales_outlet_id {sales_outlet_id}^^xsd:integer ; :transaction_date {transaction_date}^^xsd:date ; :product_id {product_id}^^xsd:integer ; :start_of_day {start_of_day}^^xsd:integer ; :quantity_sold {quantity_sold}^^xsd:integer ; :waste {waste}^^xsd:integer . 
 source		SELECT * FROM pastry_inventory
 ]]
 
