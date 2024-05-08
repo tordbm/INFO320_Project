@@ -13,12 +13,12 @@ mappingId	staff_id-staff
 target		:{STAFF_ID} a :Staff ; :first_name {FIRST_NAME}^^xsd:string ; :last_name {LAST_NAME}^^xsd:string ; :position {POSITION}^^xsd:string ; :start_date {START_DATE}^^xsd:date ; :location {LOCATION}^^xsd:string . 
 source		SELECT * FROM STAFF
 
-mappingId	staff_id-product_id
+mappingId	staff_id-transaction_id
 target		:Staff/{STAFF_ID} :staffAppearsOn :Reciept/{TRANSACTION_ID} . 
 source		SELECT STAFF_ID, TRANSACTION_ID FROM RECIEPTS
 
-mappingId	MAPID-a651c26eee864f759b68e8ec4d8c9b22
-target		:PRODUCT/{PRODUCT_ID} a :Product ; :product_group {PRODUCT_GROUP}^^xsd:string . 
+mappingId	product_id-product
+target		:PRODUCT/{PRODUCT_ID} a :Product ; :product_group {PRODUCT_GROUP}^^xsd:string ; :product_category {PRODUCT_CATEGORY}^^xsd:string ; :product_type {PRODUCT_TYPE}^^xsd:string ; :product {PRODUCT}^^xsd:string ; :product_description {PRODUCT_DESCRIPTION}^^xsd:string ; :unit_of_measure {UNIT_OF_MEASURE}^^xsd:string ; :current_wholesale_price {CURRENT_WHOLESALE_PRICE}^^xsd:decimal ; :current_retail_price {CURRENT_RETAIL_PRICE}^^xsd:string ; :tax_exempt_yn {TAX_EXEMPT_YN}^^xsd:string . 
 source		SELECT * FROM PRODUCT
 
 mappingId	generation-baby_boomer
@@ -60,5 +60,9 @@ source		SELECT * FROM sales_targets
 mappingId	sales_outlet_id-pastry-inventory
 target		:{id} a :PastryInventory ; :sales_outlet_id {sales_outlet_id}^^xsd:integer ; :transaction_date {transaction_date}^^xsd:date ; :product_id {product_id}^^xsd:integer ; :start_of_day {start_of_day}^^xsd:integer ; :quantity_sold {quantity_sold}^^xsd:integer ; :waste {waste}^^xsd:integer . 
 source		SELECT * FROM pastry_inventory
+
+mappingId	product_id-transaction_id
+target		:Product/{PRODUCT_ID} :productAppearsOn :Reciept/{TRANSACTION_ID} . 
+source		SELECT PRODUCT_ID, TRANSACTION_ID FROM RECIEPTS
 ]]
 

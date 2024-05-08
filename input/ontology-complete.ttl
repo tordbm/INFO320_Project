@@ -46,7 +46,16 @@ ex:buys rdf:type owl:ObjectProperty ;
 
 ###  http://example.org/ontology#customerAppearsOn
 ex:customerAppearsOn rdf:type owl:ObjectProperty ;
-                     rdfs:subPropertyOf ex:appearsOn .
+                     rdfs:subPropertyOf ex:appearsOn ;
+                     rdfs:domain ex:Customer ;
+                     rdfs:range ex:Reciept .
+
+
+###  http://example.org/ontology#customerBornIn
+ex:customerBornIn rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf ex:bornIn ;
+                  rdfs:domain ex:Customer ;
+                  rdfs:range ex:Generation .
 
 
 ###  http://example.org/ontology#hasGoal
@@ -54,20 +63,35 @@ ex:hasGoal rdf:type owl:ObjectProperty .
 
 
 ###  http://example.org/ontology#partOf
-ex:partOf rdf:type owl:ObjectProperty ;
-          rdfs:domain ex:PastryInventory ,
-                      ex:Product ,
-                      ex:SalesOutlet .
+ex:partOf rdf:type owl:ObjectProperty .
+
+
+###  http://example.org/ontology#pastryInventoryPartOf
+ex:pastryInventoryPartOf rdf:type owl:ObjectProperty ;
+                         rdfs:subPropertyOf ex:partOf ;
+                         rdfs:domain ex:PastryInventory ;
+                         rdfs:range ex:SalesOutlet .
 
 
 ###  http://example.org/ontology#productAppearsOn
 ex:productAppearsOn rdf:type owl:ObjectProperty ;
-                    rdfs:subPropertyOf ex:appearsOn .
+                    rdfs:subPropertyOf ex:appearsOn ;
+                    rdfs:domain ex:Product ;
+                    rdfs:range ex:Reciept .
+
+
+###  http://example.org/ontology#productPartOf
+ex:productPartOf rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf ex:partOf ;
+                 rdfs:domain ex:Product ;
+                 rdfs:range ex:PastryInventory .
 
 
 ###  http://example.org/ontology#salesOutletAppearsOn
 ex:salesOutletAppearsOn rdf:type owl:ObjectProperty ;
-                        rdfs:subPropertyOf ex:appearsOn .
+                        rdfs:subPropertyOf ex:appearsOn ;
+                        rdfs:domain ex:SalesOutlet ;
+                        rdfs:range ex:Reciept .
 
 
 ###  http://example.org/ontology#sells
@@ -82,6 +106,13 @@ ex:staffAppearsOn rdf:type owl:ObjectProperty ;
                   rdfs:subPropertyOf ex:appearsOn ;
                   rdfs:domain ex:Staff ;
                   rdfs:range ex:Reciept .
+
+
+###  http://example.org/ontology#staffBornIn
+ex:staffBornIn rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf ex:bornIn ;
+               rdfs:domain ex:Staff ;
+               rdfs:range ex:Generation .
 
 
 ###  http://example.org/ontology#worksAt
