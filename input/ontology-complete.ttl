@@ -33,15 +33,13 @@ ex:appearsOn rdf:type owl:ObjectProperty .
 
 
 ###  http://example.org/ontology#bornIn
-ex:bornIn rdf:type owl:ObjectProperty ;
-          rdfs:domain ex:Customer ,
-                      ex:Generation .
+ex:bornIn rdf:type owl:ObjectProperty .
 
 
 ###  http://example.org/ontology#buys
 ex:buys rdf:type owl:ObjectProperty ;
-        rdfs:domain ex:Customer ,
-                    ex:Product .
+        rdfs:domain ex:Customer ;
+        rdfs:range ex:Product .
 
 
 ###  http://example.org/ontology#customerAppearsOn
@@ -59,7 +57,9 @@ ex:customerBornIn rdf:type owl:ObjectProperty ;
 
 
 ###  http://example.org/ontology#hasGoal
-ex:hasGoal rdf:type owl:ObjectProperty .
+ex:hasGoal rdf:type owl:ObjectProperty ;
+           rdfs:domain ex:SalesOutlet ;
+           rdfs:range ex:SalesTarget .
 
 
 ###  http://example.org/ontology#partOf
@@ -96,9 +96,8 @@ ex:salesOutletAppearsOn rdf:type owl:ObjectProperty ;
 
 ###  http://example.org/ontology#sells
 ex:sells rdf:type owl:ObjectProperty ;
-         rdfs:domain ex:Product ,
-                     ex:Reciept ,
-                     ex:Staff .
+         rdfs:domain ex:Staff ;
+         rdfs:range ex:Product .
 
 
 ###  http://example.org/ontology#staffAppearsOn
@@ -117,8 +116,8 @@ ex:staffBornIn rdf:type owl:ObjectProperty ;
 
 ###  http://example.org/ontology#worksAt
 ex:worksAt rdf:type owl:ObjectProperty ;
-           rdfs:domain ex:SalesOutlet ,
-                       ex:Staff .
+           rdfs:domain ex:Staff ;
+           rdfs:range ex:SalesOutlet .
 
 
 ###  http://www.w3.org/2002/07/owl#topObjectProperty
