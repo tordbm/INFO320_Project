@@ -58,7 +58,7 @@ target		:SalesTarget/{sales_outlet_id} a :SalesTarget ; :year_month {year_month}
 source		SELECT * FROM sales_targets
 
 mappingId	sales_outlet_id-pastry-inventory
-target		:PastryInventory/{id} a :PastryInventory ; :sales_outlet_id {sales_outlet_id}^^xsd:integer ; :transaction_date {transaction_date}^^xsd:date ; :product_id {product_id}^^xsd:integer ; :start_of_day {start_of_day}^^xsd:integer ; :quantity_sold {quantity_sold}^^xsd:integer ; :waste {waste}^^xsd:integer . 
+target		:PastryInventory/{id} a :PastryInventory ; :sales_outlet_id {sales_outlet_id}^^xsd:integer ; :transaction_date {transaction_date}^^xsd:date ; :productPartOf :Product/{product_id} ; :start_of_day {start_of_day}^^xsd:integer ; :quantity_sold {quantity_sold}^^xsd:integer ; :waste {waste}^^xsd:integer . 
 source		SELECT * FROM pastry_inventory
 
 mappingId	product_id-transaction_id
