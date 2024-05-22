@@ -1,5 +1,5 @@
 # INFO320_Project
-
+Related repo: <a>https://github.com/tordbm/INFO320_frontend</a>
 <ul>
   <li>Download docker desktop</li>
   <li>Pull the ontop/ontop image <code>docker pull ontop/ontop</docker></code></li>
