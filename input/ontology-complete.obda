@@ -64,5 +64,13 @@ source		SELECT * FROM pastry_inventory
 mappingId	product_id-transaction_id
 target		:Product/{PRODUCT_ID} :productAppearsOn :Reciept/{TRANSACTION_ID} . 
 source		SELECT PRODUCT_ID, TRANSACTION_ID FROM RECIEPTS
+
+mappingId	staff_id-product_id
+target		:Staff/{STAFF_ID} :sells :Product/{PRODUCT_ID} . 
+source		SELECT STAFF_ID, PRODUCT_ID FROM RECIEPTS
+
+mappingId	customer_id-product_id
+target		:Customer/{CUSTOMER_ID} :buys :Product/{PRODUCT_ID} . 
+source		SELECT CUSTOMER_ID, PRODUCT_ID FROM RECIEPTS
 ]]
 
